@@ -1,265 +1,70 @@
-<!doctype html>
-<html lang="en">
-    <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
-        <title>Instituto Jesus Maria</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-        href="https://unpkg.com/aos@2.3.1/dist/aos.css" 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">Tailwind Ejercicios</h1>
+    <nav class="md:flex hidden space-x-4">
+      <a href="#btn" class="hover:text-blue-500">Botón</a>
+      <a href="#card" class="hover:text-blue-500">Tarjeta</a>
+      <a href="#layout" class="hover:text-blue-500">Layout</a>
+      <a href="#form" class="hover:text-blue-500">Formulario</a>
+    </nav>
+    <div class="md:hidden">
+      <button id="menuBtn" class="text-gray-700 focus:outline-none">
+        ☰
+      </button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="md:hidden hidden bg-white px-4 pb-4">
+    <a href="#btn" class="block py-1">Botón</a>
+    <a href="#card" class="block py-1">Tarjeta</a>
+    <a href="#layout" class="block py-1">Layout</a>
+    <a href="#form" class="block py-1">Formulario</a>
+  </div>
 
-        <style>
-            body {
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              background-color: #0f172a;
-              color: #000000;
-              scroll-behavior: smooth;
-            }
-            .hero {
-          background: url(fondo2022.jpg) center/cover no-repeat;
-          position: relative;
-        }
-        
-          .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(14, 165, 233, 0.5), rgba(30, 58, 138, 0.8));
-            z-index: 0;
-          }
-            .glass {
-              background: rgba(255, 255, 255, 0.05);
-              backdrop-filter: blur(10px);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              border-radius: 1rem;
-            }
-            .form-input:focus {
-              outline: none;
-              border-color: #38bdf8;
-              box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.5);
-            }
-            .section-divider {
-              background-color: black;
-              height: 15px;
-            }
-          </style>
+  <section id="btn" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Botón Hover</h2>
+    <button class="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      Pasa el cursor
+    </button>
+  </section>
 
-    </head>
+  <section id="card" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Tarjeta de Usuario</h2>
+    <div class="bg-white rounded-lg shadow-md p-4 max-w-sm">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9sFFtAqQICPyMc2CVR2UurigA_kya6WILg&s" alt="Usuario" class="rounded-full w-24 h-24 mx-auto mb-4">
+      <h3 class="text-xl font-bold text-center">Juan Pérez</h3>
+      <p class="text-gray-600 text-center mt-2">Desarrollador web apasionado por el diseño y la tecnología.</p>
+    </div>
+  </section>
 
-        <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+  <section id="layout" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Layout Responsivo</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded shadow">Columna 1</div>
+      <div class="bg-white p-4 rounded shadow">Columna 2</div>
+    </div>
+  </section>
 
-            <!-- HERO -->
-            <!-- Sección de Inicio -->
-            <section id="inicio" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center overflow-hidden">
-            
-              <!-- Imagen de fondo con superposición -->
-              <div class="absolute inset-0">
-                <img src="#" alt="Fondo educativo" class="w-full h-full object-cover brightness-75">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-cyan-200/70"></div>
-              </div>
-            
-              <!-- Contenido del Hero -->
-              <div class="relative z-10 max-w-3xl">
-                <h1 class="text-white text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg tracking-wide font-[Playfair Display] aos-init aos-animate" data-aos="zoom-in">
-                  Jesus Maria
-                </h1>
-                <h2 class="text-cyan-100 text-3xl md:text-4xl font-semibold mb-6 drop-shadow-md font-[Playfair Display] aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                    Instituto Tecnico Superior
-                </h2>
-                <p class="text-white text-lg md:text-xl leading-relaxed drop-shadow-md font-[Playfair Display] aos-init aos-animate" data-aos="fade-up" data-aos-delay="700">
-                  <!-- Formación de excelencia para transformar tu futuro profesional. -->
-                </p>
-            
-                <!-- Botón -->
-                <a href="#quienes" class="mt-10 inline-block bg-white text-blue-900 px-8 py-3 rounded-full font-semibold shadow-xl hover:scale-105 hover:bg-cyan-100 hover:text-blue-800 transition-all duration-300 ease-in-out aos-init aos-animate" data-aos="fade-up" data-aos-delay="1000">
-                  EXPLORA CON NOSOTROS
-                </a>
-              </div>
-            </section>
-            
-            <!-- QUIÉNES SOMOS -->
-            <section id="quienes" class="py-20 px-6 bg-slate-600 text-center">
-              <div class="max-w-4xl mx-auto aos-init aos-animate" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-cyan-400 mb-4">¿Quiénes Somos?</h2>
-                <p class="text-slate-300 text-lg">
-                    Somos el Instituto Técnico Superior Jesús María, una institución educativa comprometida con la formación integral de jóvenes y adultos en el ámbito técnico-tecnológico, con más de tres décadas de experiencia en la ciudad de Oruro, Bolivia. Desde nuestra fundación en 1991, trabajamos con vocación de servicio, inspirados por valores cristianos y principios humanistas, brindando educación de calidad, inclusiva y orientada al desarrollo profesional de nuestros estudiantes. Ofrecemos carreras técnicas superiores como Sistemas Informáticos, Secretariado Ejecutivo y Telecomunicaciones, formando profesionales competentes, éticos y preparados para enfrentar los retos del mundo laboral actual. Nuestra misión es impulsar la superación personal y social, especialmente de sectores con menos oportunidades, generando agentes de cambio que contribuyan activamente al progreso de su comunidad. En el Instituto Técnico Jesús María creemos que la educación es una herramienta poderosa de transformación, y por ello, cultivamos un ambiente de respeto, responsabilidad, innovación y excelencia académica.
-                </p>
-              </div>
-            </section>
-            
-            <!-- ADMISION -->
-            <section id="admision" class="py-24 px-6 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 text-white text-center relative overflow-hidden">
-              <div class="max-w-4xl mx-auto aos-init" data-aos="fade-up">
-                
-                <h2 class="text-4xl font-bold text-cyan-100 mb-8 font-[Playfair Display] drop-shadow-lg">
-                  Inscripciones
-                </h2>
-            
-                <p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-                  Respondemos las preguntas mas frecuentes para ayudarte a construir tu futuro como profesional.
-                </p>
-            
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-white text-base font-medium">
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Qué documentos necesito para inscribirme?
-                  </li>
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Ofrecen becas o descuentos especiales?
-                  </li>
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Puedo estudiar y trabajar al mismo tiempo?
-                  </li>
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Tienen horarios nocturnos o de fin de semana?
-                  </li>
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Puedo hacer parte de mis clases de forma virtual?
-                  </li>
-                  <li class="flex items-start gap-3 bg-white/10 p-4 rounded-lg hover:scale-[1.02] transition">
-                    <span class="text-cyan-200 text-xl"></span> ¿Cuáles son los requisitos académicos mínimos?
-                  </li>
-                  
-                </ul>
-              </div>
-            </section>
-            
-            
-            <div class="section-divider"></div>
-            
-            <section id="carreras" class="py-20 px-6 bg-slate-900 text-center text-white">
-              <h2 class="text-3xl font-bold text-cyan-500 mb-10 aos-init" data-aos="fade-up">Ofrecemos las Siguientes Carreras</h2>
-              <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto aos-init" data-aos="fade-up" data-aos-delay="200">
-                <div class="glass p-6">
-                  <img src="secretariado.jfif" class="rounded-lg mb-4 w-full h-48 object-cover">
-                  <h3 class="text-xl font-bold text-cyan-900 mb-2">Secretariado Ejecutivo</h3>
-                  <p>Gestión administrativa, organización de eventos y dominio de herramientas de oficina modernas.</p>
-                </div>
-                <div class="glass p-6">
-                  <img src="telecomunicaciones.png" class="rounded-lg mb-4 w-full h-48 object-cover">
-                  <h3 class="text-xl font-bold text-cyan-900 mb-2">Telecomunicaciones</h3>
-                  <p>Instalación, mantenimiento y gestión de sistemas de comunicación modernos y redes digitales.</p>
-                </div>
-                <div class="glass p-6">
-                  <img src="sistemas.jfif" class="rounded-lg mb-4 w-full h-48 object-cover">
-                  <h3 class="text-xl font-bold text-cyan-900 mb-2">Sistemas Informáticos</h3>
-                  <p>Diseño de software, bases de datos, redes y soluciones tecnológicas empresariales.</p>
-                </div>
-              </div>
-            </section>
-            
-            <div class="section-divider"></div>
-            
-            <section id="plataforma" class="relative py-24 px-6 bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-800 text-center text-white overflow-hidden">
-            
-              <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
-            
-              <div class="relative z-10 max-w-4xl mx-auto aos-init" data-aos="fade-up">
-            
-                <div class="text-6xl mb-6 animate-bounce text-cyan-300"></div>
-            
-                <h2 class="text-4xl font-bold text-cyan-100 mb-4 font-[Playfair Display] drop-shadow-lg">
-                  Plataforma Orginal
-                </h2>
-            
-                <p class="mb-8 text-lg text-blue-100 leading-relaxed px-4 md:px-10 aos-init" data-aos="fade-up" data-aos-delay="150">
-                    
-                </p>
-            
-                <a href="http://intjem.edu.bo/infoplataforma.php" target="_blank" class="inline-block bg-white text-blue-900 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-cyan-100 hover:text-blue-800 transition-all duration-300 ease-in-out aos-init" data-aos="zoom-in" data-aos-delay="300">
-                  Sitio Oficcial
-                </a>
-            
-              </div>
-            </section>
-            
-            <div class="section-divider"></div>
+  <section id="form" class="p-6">
+    <h2 class="text-2xl font-semibold mb-4">Formulario</h2>
+    <form class="bg-white p-6 rounded shadow max-w-md">
+      <label class="block mb-2 font-medium">Nombre</label>
+      <input type="text" class="w-full p-2 border rounded mb-4" placeholder="Tu nombre">
+      <label class="block mb-2 font-medium">Email</label>
+      <input type="email" class="w-full p-2 border rounded mb-4" placeholder="tucorreo@example.com">
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Enviar
+      </button>
+    </form>
+  </section>
 
-
-            <section id="contacto" class="relative py-24 px-6 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 text-white text-center overflow-hidden">
-            
-                <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')]"></div>
-              
-                <div class="relative z-10 max-w-2xl mx-auto">
-                  <h2 class="text-4xl font-bold text-cyan-300 mb-6 font-[Playfair Display] drop-shadow-md aos-init" data-aos="fade-up">
-                    Contacto
-                  </h2>
-                  <p class="text-blue-100 mb-10 text-lg aos-init" data-aos="fade-up" data-aos-delay="100">
-                    
-                  </p>
-              
-                  <form onsubmit="return validateForm()" class="bg-white/10 backdrop-blur-md p-8 rounded-xl shadow-2xl space-y-5 text-left aos-init" data-aos="fade-up" data-aos-delay="200">
-              
-                    <div class="relative">
-                      <input type="text" id="name" placeholder="Tu nombre" class="w-full p-4 pl-12 rounded-lg bg-white/5 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400" required="">
-                      <span class="absolute top-3.5 left-4 text-cyan-300 text-xl"></span>
-                    </div>
-              
-                    <div class="relative">
-                      <input type="email" id="email" placeholder="Tu correo" class="w-full p-4 pl-12 rounded-lg bg-white/5 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" required="">
-                      <span class="absolute top-3.5 left-4 text-cyan-300 text-xl"></span>
-                    </div>
-              
-                    <div class="relative">
-                      <textarea id="message" rows="4" placeholder="Escribe tu mensaje..." class="w-full p-4 pl-12 rounded-lg bg-white/5 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" required=""></textarea>
-                      <span class="absolute top-3.5 left-4 text-cyan-300 text-xl"></span>
-                    </div>
-              
-                    <div class="text-center">
-                      <button type="submit" class="bg-cyan-400 text-black px-8 py-3 rounded-full font-semibold shadow-md hover:scale-105 hover:bg-cyan-300 transition duration-300 ease-in-out">
-                        Enviar
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </section>
-            
-            <section id="galeria" class="py-20 px-6 bg-slate-900">
-              <h2 class="text-3xl font-bold text-cyan-400 text-center mb-10 aos-init" data-aos="fade-up">Grupos-Fotografias</h2>
-              <div id="galeria" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto aos-init" data-aos="fade-up" data-aos-delay="200">
-                <img src="01.jpg" class="rounded-lg cursor-pointer hover:scale-105 transition duration-300">
-                <img src="02.jpg" class="rounded-lg cursor-pointer hover:scale-105 transition duration-300">
-                <img src="07.jpg" class="rounded-lg cursor-pointer hover:scale-105 transition duration-300">
-                <img src="08.jpg" class="rounded-lg cursor-pointer hover:scale-105 transition duration-300">
-                <img src="11.jpg" class="rounded-lg cursor-pointer hover:scale-100 transition duration-200">
-                <img src="17.jpg" class="rounded-lg cursor-pointer hover:scale-100 transition duration-200">
-              </div>
-            </section>
-            
-            <div class="section-divider"></div>
-            
-            
-            <div id="modal" class="fixed inset-0 bg-black bg-opacity-90 hidden justify-center items-center z-50 transition duration-300">
-              <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-4xl font-bold hover:text-cyan-400 transition">×</button>
-              <button id="prev" class="absolute left-6 text-white text-3xl font-bold hover:text-cyan-300">←</button>
-              <img id="modal-img" src="" class="max-h-[90%] max-w-[90%] rounded-lg shadow-xl border-4 border-white scale-95 transition duration-300 ease-in-out">
-              <button id="next" class="absolute right-6 text-white text-3xl font-bold hover:text-cyan-300">→</button>
-            </div>
-        
-
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+</body>
 </html>
